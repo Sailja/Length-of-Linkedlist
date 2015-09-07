@@ -1,2 +1,2 @@
-# Length-of-Linkedlist
-Iterative approach to find length of linked list.
+# Linked List codes
+Codes for different basic questions on Linked List 
