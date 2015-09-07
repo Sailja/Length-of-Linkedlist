@@ -20,7 +20,7 @@ void printList(struct node* n)
 		n=n->next;
 	}
 }
-void count(struct node * n)
+void count(struct node * n) 
 {
 	int count =0;
 	while(n!=NULL)
