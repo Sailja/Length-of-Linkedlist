@@ -1,0 +1,74 @@
+//iterative approach and recursive approach to search an element
+#include<stdio.h>
+#include<stdlib.h>
+struct node{
+	int data;
+	struct node * next;
+};
+void push(struct node **head_ref,int new_data)
+{
+	struct node * new_node=(struct node*)malloc(sizeof(struct node));
+	new_node->data=new_data;
+	new_node->next=*head_ref;
+	*head_ref=new_node;
+}
+void printList(struct node * n)
+{
+	while(n!=NULL)
+	{
+		printf("%d ",n->data);
+		n=n->next;
+	}
+}
+
+//iterative approach
+void itrsearch(struct node *head,int key)
+
+{
+	
+	struct node * temp=head;
+
+		while(temp !=NULL)
+		{
+			if (temp->data==key)
+			{
+				printf("true\n") ;
+				break;
+			}
+			temp=temp->next;
+		}
+	if(temp ==NULL)
+	printf("false\n");
+	
+}
+// recursive eapproach
+bool research(struct node* head,int key)
+{
+	if (head==NULL)
+	return false;
+	if (head->data==key)
+	{
+		
+		return true;
+	}
+	else
+	{
+		research(head->next,key);
+	}
+	
+}
+int main()
+{
+	struct node * head=NULL;
+	push(&head,7);
+	push(&head,8);
+	push(&head,9);
+	push(&head,10);
+	itrsearch(head,10);
+	if (research(head,11)==true)
+	printf("True\n");
+	else
+	printf("false\n");
+		
+	
+}
